@@ -1,5 +1,5 @@
-
 <?php
+
 $mahasiswa = [
     [ "nim" => "25001",
         "nama" => "Arohid Maulana",
@@ -112,38 +112,45 @@ $mahasiswa = [
     <table class="table">
         <thead>
             <tr>
-                <th>No.</th>
-                <th>NIM</th>
-                <th>Nama</th>
-                <th>Jurusan</th>
-                <th>Email</th>
-                <th>Nilai</th>
-                <th>Grade</th>
-                <th>Status</th>
-                <th>Detail</th>
+<th>No.</th>
+<th>NIM</th>
+<th>Nama</th>
+<th>Jurusan</th>
+<th>Email</th>
+<th>Nilai</th>
+<th>Grade</th>
+<th>Status</th>
+<th>Detail</th>
             </tr>
         </thead>
 <tbody>
 
+
 <?php
 $no = 1;
 
-foreach ($mahasiswa as $data) {
+foreach ($mahasiswa as $data) :
     if ($data["nilai"] >= 80) {
-        $grade = "A"; }
+        $grade = "A";
+    }
     elseif ($data["nilai"] >= 70) {
-        $grade = "B"; }
+        $grade = "B";
+    }
     elseif ($data["nilai"] >= 60) {
-        $grade = "C"; }
+        $grade = "C";
+    }
     else {
-        $grade = "D"; }
+        $grade = "D";
+    }
 
     if ($data["nilai"] >= 70) {
         $status = "Lulus";
-        $kelas = "lulus"; }
+        $kelas = "lulus";
+    }
     else {
         $status = "Tidak Lulus";
-        $kelas = "tidak-lulus"; }
+        $kelas = "tidak-lulus";
+    }
 ?>
 
 <tr>
@@ -156,15 +163,14 @@ foreach ($mahasiswa as $data) {
     <td><?= $grade ?></td>
     <td class="<?= $kelas ?>"><?= $status ?></td>
     <td>
-    <a class="tombol" href="detail.php?nim=<?= ($data["nim"]) ?>&nama=<?= ($data["nama"]) ?>&jurusan=<?= ($data["jurusan"]) ?>&email=<?= ($data["email"]) ?>&nilai=<?= $data["nilai"] ?>&grade=<?= $grade ?>&status=<?= ($status) ?>">Lihat Detail</a>
+        <a class="tombol" href="detail.php?nim=<?= $data["nim"] ?>&nama=<?= $data["nama"] ?>&jurusan=<?= $data["jurusan"] ?>&email=<?= $data["email"] ?>&nilai=<?= $data["nilai"] ?>&grade=<?= $grade ?>&status=<?= $status ?>">Lihat Detail</a>
     </td>
 </tr>
 
 <?php
-$no++; }
+    $no++;
+endforeach;
 ?>
-
-</tbody>
 </table>
 </div>
 

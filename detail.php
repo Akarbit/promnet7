@@ -1,4 +1,5 @@
 <?php
+
 $wajib = ["nim", "nama", "jurusan", "email", "nilai", "grade", "status"];
 
 foreach ($wajib as $item) {
