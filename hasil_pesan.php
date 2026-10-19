@@ -1,14 +1,11 @@
-
 <?php
 if (!isset($_POST["tombol_kirim"])) {
     header("Location: form_pesan.php");
-    exit;
-}
+    exit; }
 
 $nama = $_POST["nama"];
 $kelas = $_POST["kelas"];
-$pesan = $_POST["pesan"];
-?>
+$pesan = $_POST["pesan"]; ?>
 
 <!DOCTYPE html>
 <html lang="id">
@@ -50,5 +47,4 @@ a { display: inline-block;
         <div class="baris"> <b>Pesan / Kesan</b> : <?= $pesan ?> </div>
         <a href="index.php">Kembali ke Daftar Mahasiswa</a>
     </div>
-</body>
-</html>
+</body> </html>

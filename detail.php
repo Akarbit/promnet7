@@ -1,6 +1,5 @@
-
 <?php
-$wajib = ["nim","nama","jurusan","email","nilai","grade","status"];
+$wajib = ["nim", "nama", "jurusan", "email", "nilai", "grade", "status"];
 
 foreach ($wajib as $item) {
     if (!isset($_GET[$item])) {
